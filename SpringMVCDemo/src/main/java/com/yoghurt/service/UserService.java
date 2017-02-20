@@ -13,4 +13,11 @@ public class UserService {
     public void addUser(User user){
         dao.addUser(user);
     }
+
+    public void deleteUser(Long id){
+        dao.deleteById(id);
+    }
+    public String  read(Long id){
+        return dao.read(id);
+    }
 }

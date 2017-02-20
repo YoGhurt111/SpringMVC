@@ -22,4 +22,17 @@ public class UserController {
         service.addUser(user);
         return "user";
     }
+
+    @RequestMapping(value = "deleteUserById",produces = "text/html;charset=UTF-8")
+    @ResponseBody
+    public String deleteById(@RequestParam Long id){
+        service.deleteUser(id);
+        return "id为" + id.toString() + "的用户已被删除";
+    }
+
+    @RequestMapping(value = "read",produces = "text/html;charset=UTF-8" )
+    @ResponseBody
+    public String read(@RequestParam Long id){
+        return service.read(id);
+    }
 }

@@ -15,6 +15,12 @@
     <!--开启注解-->
     <mvc:annotation-driven/>
 
+    <!-- 拦截器 -->
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+        <bean class="com.yoghurt.interceptors.AuthInterceptor"/>
+    </mvc:interceptors>
+
     <!--ViewResolver-->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
