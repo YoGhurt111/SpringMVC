@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-    @AuthPassport(needAuth = false)
+
     @RequestMapping(value = "/")
     public String index(){
         return "index";
+    }
+
+    @RequestMapping(value = "fail")
+    public String failView(){
+        return "fail";
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Repository
@@ -34,5 +35,15 @@ public class UserDao extends BaseDao{
         Gson gson = builder.create();
         User user = this.getSession().get(User.class, id);
         return gson.toJson(user);
+    }
+
+    public boolean selectUser(User user){
+        List<User> users = this.getSession().createQuery("from User where name=? and pwd=?")
+                .setParameter(0,user.getName())
+                .setParameter(1, user.getPwd()).list();
+        if (!users.isEmpty()){
+            return true;
+        }
+        return false;
     }
 }

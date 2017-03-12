@@ -20,4 +20,7 @@ public class UserService {
     public String  read(Long id){
         return dao.read(id);
     }
+    public boolean userExist(User user){
+        return dao.selectUser(user);
+    }
 }
