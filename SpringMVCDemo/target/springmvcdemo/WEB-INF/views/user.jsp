@@ -13,10 +13,10 @@
 </head>
 <body>
 <h1>登录成功，请选择前往界面</h1>
-<p id="name1">${user.getName()}</p>
-<a href="/A?name=${user.getName()}" id="bt">链接甲</a>
+<p>${user.getName()}</p>
+<a href="/A?name=${user.getName()}">链接甲</a>
 <br>
-<a>链接乙</a>
+<a href="/B?name=${user.getName()}">链接乙</a>
 </body>
 </html>
 <%--<script>--%>

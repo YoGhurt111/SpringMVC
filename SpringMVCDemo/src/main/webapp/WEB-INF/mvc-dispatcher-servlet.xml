@@ -19,6 +19,7 @@
     <mvc:interceptors>
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
         <bean class="com.yoghurt.interceptors.AuthInterceptor"/>
+        <bean class="com.yoghurt.interceptors.BAuthInterceptor"/>
     </mvc:interceptors>
 
     <!--ViewResolver-->

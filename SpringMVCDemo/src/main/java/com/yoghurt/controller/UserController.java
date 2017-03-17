@@ -1,6 +1,7 @@
 package com.yoghurt.controller;
 
 import com.yoghurt.auth.AuthPassport;
+import com.yoghurt.auth.BAuthPassport;
 import com.yoghurt.entity.User;
 import com.yoghurt.service.UserService;
 import org.codehaus.jackson.map.util.JSONPObject;
@@ -55,13 +56,14 @@ public class UserController {
     @RequestMapping(value = "A",  method = RequestMethod.GET)
     @AuthPassport
     public String differentView(String name){
-//        if (name.equals("A")){
-//            return "A";
-//        }
-//        else {
-//            return "fail";
-//        }
         return "A";
+    }
+
+
+    @RequestMapping(value = "B", method = RequestMethod.GET)
+    @BAuthPassport
+    public String bView(String name){
+        return "B";
     }
 
 }
